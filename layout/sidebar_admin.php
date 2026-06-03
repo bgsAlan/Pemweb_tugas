@@ -11,7 +11,7 @@
 
     <a href="add_user_view.php">
         <i class="bi bi-people"></i>
-        Tambah User
+        Kelola Users
     </a>
 
     <a href="open_presensi_view.php">
