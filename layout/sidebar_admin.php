@@ -4,12 +4,12 @@
         PresensiApp
     </h4>
 
-    <a href="dashboard_admin_view.php">
+    <a href="/siakad_pemweb/view/admin/dashboard_admin_view.php">
         <i class="bi bi-speedometer2"></i>
         Dashboard
     </a>
 
-    <a href="add_user_view.php">
+    <a href="/siakad_pemweb/view/admin/kelolaUsers_view.php">
         <i class="bi bi-people"></i>
         Kelola Users
     </a>
