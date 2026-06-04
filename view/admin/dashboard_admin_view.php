@@ -2,7 +2,7 @@
 session_start();
 include("../../layout/header.php");
 include("../../layout/sidebar_admin.php");
-require __DIR__ . "/../../controller/admin/dashboard_controller.php";
+require __DIR__ . "/../../controller/admin/dashboard_admin_controller.php";
 ?>
 <div class="main-content">
 

@@ -1,6 +1,7 @@
 <?php
 session_start();
-require __DIR__ . "/../../../controller/admin/kelolaSiswa/get_siswa_kelola_controller.php";
+require __DIR__ . "/../../../controller/admin/kelolaGuru/get_mapel_controller.php";
+require __DIR__ . "/../../../controller/admin/kelolaGuru/get_guru_kelola_controller.php";
 include("../../../layout/header.php");
 include("../../../layout/sidebar_admin.php");
 ?>
@@ -12,11 +13,11 @@ include("../../../layout/sidebar_admin.php");
         <div class="card shadow border-0">
 
             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                <h4 class="mb-0">Kelola Siswa</h4>
+                <h4 class="mb-0">Kelola Guru</h4>
 
-                <a href="tambahSiswa_view.php" class="btn btn-light">
+                <a href="tambahGuru_view.php" class="btn btn-light">
                     <i class="bi bi-plus-circle"></i>
-                    Tambah Siswa
+                    Tambah Guru
                 </a>
             </div>
 
@@ -31,32 +32,20 @@ include("../../../layout/sidebar_admin.php");
                             <input type="text"
                                 name="search"
                                 class="form-control"
-                                placeholder="Cari nama atau NISN siswa..."
+                                placeholder="Cari nama atau NIP guru..."
                                 value="<?= $_GET['search'] ?? '' ?>">
                         </div>
 
                         <div class="col-md-3">
-                            <select name="kelas" class="form-select">
-                                <option value="">Pilih kelas</option>
-
-                                <option value="X-A">X-A</option>
-                                <option value="X-B">X-B</option>
-                                <option value="X-C">X-C</option>
-                                <option value="X-D">X-D</option>
-                                <option value="X-E">X-E</option>
-
-                                <option value="XI-A">XI-A</option>
-                                <option value="XI-B">XI-B</option>
-                                <option value="XI-C">XI-C</option>
-                                <option value="XI-D">XI-D</option>
-                                <option value="XI-E">XI-E</option>
-
-                                <option value="XII-A">XII-A</option>
-                                <option value="XII-B">XII-B</option>
-                                <option value="XII-C">XII-C</option>
-                                <option value="XII-D">XII-D</option>
-                                <option value="XII-E">XII-E</option>
+                            <select name="mapel" class="form-select">
+                                <option value="">Pilih Mata Pelajaran</option>
+                                <?php while ($row = mysqli_fetch_assoc($get_mapel)) : ?>
+                                    <option value="<?= $row['id']; ?>">
+                                        <?= $row['nama']; ?>
+                                    </option>
+                                <?php endwhile; ?>
                             </select>
+
                         </div>
 
                         <div class="col-md-3">
@@ -90,29 +79,29 @@ include("../../../layout/sidebar_admin.php");
                         <thead class="table-dark">
                             <tr>
                                 <th width="60">No</th>
-                                <th>NISN</th>
-                                <th>Nama Siswa</th>
-                                <th>Kelas</th>
+                                <th>NIP</th>
+                                <th>Nama Guru</th>
+                                <th>Mata pelajaran</th>
                                 <th width="180">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $no = 1; ?>
-                            <?php while ($siswa = mysqli_fetch_assoc($get_siswa)): ?>
+                            <?php while ($guru = mysqli_fetch_assoc($get_guru)): ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
-                                    <td><?= $siswa['nisn'] ?></td>
-                                    <td><?= $siswa['nama'] ?></td>
-                                    <td><?= $siswa['kelas'] ?></td>
+                                    <td><?= $guru['nip'] ?></td>
+                                    <td><?= $guru['nama'] ?></td>
+                                    <td><?= $guru['mapel'] ?></td>
                                     <td>
-                                        <a href="edit_siswa_view.php"
+                                        <a href="edit_guru_view.php?id=<?= $guru['id'] ?>"
                                             class="btn btn-warning btn-sm">
                                             <i class="bi bi-pencil-square"></i>
                                             Edit
                                         </a>
-                                        <a href="../../../controller/admin/kelolaSiswa/hapus_siswa_controller.php?id=<?= $siswa['id'] ?>"
+                                        <a href="../../../controller/admin/kelolaGuru/hapus_guru_controller.php?id=<?= $guru['id'] ?>"
                                             class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Yakin ingin menghapus siswa ini?')">
+                                            onclick="return confirm('Yakin ingin menghapus guru ini?')">
                                             <i class="bi bi-trash"></i>
                                             Hapus
                                         </a>

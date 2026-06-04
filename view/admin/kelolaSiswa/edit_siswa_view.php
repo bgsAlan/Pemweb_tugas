@@ -1,6 +1,6 @@
 <?php
 session_start();
-require __DIR__ . "/../../../controller/admin/get_siswa_kelola_controller.php";
+require __DIR__ . "/../../../controller/admin/kelolaSiswa/get_siswa_kelola_controller.php";
 include("../../../layout/header.php");
 include("../../../layout/sidebar_admin.php");
 ?>
@@ -29,7 +29,7 @@ include("../../../layout/sidebar_admin.php");
                         <?php unset($_SESSION['success']); ?>
                     <?php endif; ?>
                     <div class="card-body">
-                        <form action="../../../controller/admin/update_siswa_controller.php" method="POST">
+                        <form action="../../../controller/admin/kelolaSiswa/update_siswa_controller.php" method="POST">
                             <?php $siswa = mysqli_fetch_assoc($get_siswa); ?>
                             <input type="hidden"
                                 name="siswa_id"

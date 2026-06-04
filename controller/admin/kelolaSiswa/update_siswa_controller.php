@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require __DIR__."/../../config/db.php";
+require __DIR__."/../../../config/db.php";
 $error = "";
 $success = "";
 //Cek apakah data data yang dikirim
@@ -9,7 +9,7 @@ if(isset($_POST['submit'])) {
     $kelas = $_POST['kelas'];
     if (empty($kelas)) {
         $_SESSION['error'] = "Kelas wajib dipilih";
-        header("Location: ../view/admin/kelolaSiswa/edit_siswa_view.php?id=$siswa_id");
+        header("Location: ../../view/admin/kelolaSiswa/edit_siswa_view.php?id=$siswa_id");
         exit;
     }
     //update sql

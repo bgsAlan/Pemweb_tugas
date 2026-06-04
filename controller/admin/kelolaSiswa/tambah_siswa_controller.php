@@ -1,6 +1,6 @@
 <?php
 session_start();
-require(__DIR__."/../../config/db.php");
+require(__DIR__."/../../../config/db.php");
 $error = "";
 $success = "";
 if (isset($_POST["submit"])) {
@@ -15,7 +15,7 @@ if (isset($_POST["submit"])) {
 
     if (mysqli_num_rows($check_email) > 0) {
         $_SESSION['error'] = "Email sudah digunakan!";
-        header("Location: ../../view/admin/kelolaSiswa/tambahSiswa_view.php");
+        header("Location: ../../../view/admin/kelolaSiswa/tambahSiswa_view.php");
         exit;
     }
 

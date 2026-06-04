@@ -1,6 +1,6 @@
 <?php
 session_start();
-require __DIR__ . "/../../config/db.php";
+require __DIR__ . "/../../../config/db.php";
 if (isset($_GET['id'])) {
 
     $siswa_id = $_GET['id'];

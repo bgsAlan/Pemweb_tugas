@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/../../config/db.php";
+require __DIR__ . "/../../../config/db.php";
 
 $search = $_GET['search'] ?? '';
 $kelas  = $_GET['kelas'] ?? '';

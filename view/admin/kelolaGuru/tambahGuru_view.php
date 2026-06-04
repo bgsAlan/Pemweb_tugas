@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require __DIR__ . "/../../../controller/admin/kelolaGuru/get_mapel_controller.php";
 include("../../../layout/header.php");
 include("../../../layout/sidebar_admin.php");
 ?>
@@ -14,7 +14,7 @@ include("../../../layout/sidebar_admin.php");
 
                 <div class="card shadow">
                     <div class="card-header text-center bg-primary text-white">
-                        <h3>Form Tambah Siswa</h3>
+                        <h3>Form Tambah Guru</h3>
                     </div>
                     <?php if (isset($_SESSION['error'])) : ?>
                         <div class="alert alert-danger">
@@ -30,39 +30,32 @@ include("../../../layout/sidebar_admin.php");
                         <?php unset($_SESSION['success']); ?>
                     <?php endif; ?>
                     <div class="card-body">
-                        <form action="../../../controller/admin/kelolaSiswa/tambah_siswa_controller.php" method="POST">
+                        <form action="../../../controller/admin/kelolaGuru/tambah_guru_controller.php" method="POST">
 
                             <div class="mb-3">
-                                <label class="form-label">Nama Siswa</label>
-                                <input type="text" name="nama" class="form-control" placeholder="Masukkan nama siswa" required>
+                                <label class="form-label">Nama Guru</label>
+                                <input type="text" name="nama" class="form-control" placeholder="Masukkan nama guru" required>
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label">NISN</label>
-                                <input type="text" name="nisn" class="form-control" placeholder="Masukkan NISN" required>
+                                <label class="form-label">NIP</label>
+                                <input type="text" name="nip" class="form-control" placeholder="Masukkan NIP" required>
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label">Kelas</label>
-                                <select name="kelas" id="kelas" class="form-select">
-                                    <option value="">Pilih kelas</option>
-                                    <option value="X-A">X-A</option>
-                                    <option value="X-B">X-B</option>
-                                    <option value="X-C">X-C</option>
-                                    <option value="X-D">X-D</option>
-                                    <option value="X-E">X-E</option>
-                                    <option value="XI-A">XI-A</option>
-                                    <option value="XI-B">XI-B</option>
-                                    <option value="XI-C">XI-C</option>
-                                    <option value="XI-D">XI-D</option>
-                                    <option value="XI-E">XI-E</option>
-                                    <option value="XII-A">XII-A</option>
-                                    <option value="XII-B">XII-B</option>
-                                    <option value="XII-C">XII-C</option>
-                                    <option value="XII-D">XII-D</option>
-                                    <option value="XII-E">XII-E</option>
-                                   
-                                </select>
+                                <label class="form-label">Mata Pelajaran</label>
+                                <?php while ($row = mysqli_fetch_assoc($get_mapel)) : ?>
+                                    <div class="form-check">
+                                        <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            name="mapel[]"
+                                            value="<?= $row['id']; ?>">
+                                        <label class="form-check-label">
+                                            <?= $row['nama']; ?>
+                                        </label>
+                                    </div>
+                                <?php endwhile; ?>
                             </div>
 
                             <div class="mb-3">
@@ -76,7 +69,7 @@ include("../../../layout/sidebar_admin.php");
                             </div>
 
                             <button type="submit" name="submit" class="btn btn-primary w-100">
-                                Tambah Siswa
+                                Tambah Guru
                             </button>
 
                         </form>
@@ -93,7 +86,7 @@ include("../../../layout/sidebar_admin.php");
 </body>
 
 </html>
-<?php 
+<?php
 
 include("../../../layout/footer.php");
 ?>

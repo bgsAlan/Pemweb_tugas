@@ -53,7 +53,7 @@ include("../../layout/sidebar_admin.php");
                                     Tambah, edit, hapus, dan lihat data guru.
                                 </p>
 
-                                <a href="kelola_guru_view.php"
+                                <a href="kelolaGuru/kelolaGuru_view.php"
                                     class="btn btn-success">
                                     Kelola Guru
                                 </a>
