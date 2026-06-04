@@ -9,7 +9,7 @@ if(isset($_POST['submit'])) {
     $kelas = $_POST['kelas'];
     if (empty($kelas)) {
         $_SESSION['error'] = "Kelas wajib dipilih";
-        header("Location: ../../view/admin/kelolaSiswa/edit_siswa_view.php?id=$siswa_id");
+        header("Location: ../../../view/admin/kelolaSiswa/edit_siswa_view.php?id=$siswa_id");
         exit;
     }
     //update sql
@@ -25,7 +25,7 @@ if(isset($_POST['submit'])) {
         $_SESSION['error'] = "Data siswa gagal diupdate";
     }
 
-    header("Location: ../../view/admin/kelolaSiswa/edit_siswa_view.php");
+    header("Location: ../../../view/admin/kelolaSiswa/edit_siswa_view.php");
     exit;
 }
 

@@ -36,6 +36,6 @@ if (isset($_GET['id'])) {
         $_SESSION['error'] = "Data siswa tidak ditemukan";
     }
 
-    header("Location: ../../view/admin/kelolaSiswa/kelolaSiswa_view.php");
+    header("Location: ../../../view/admin/kelolaSiswa/tambahSiswa_view.php");
     exit;
 }

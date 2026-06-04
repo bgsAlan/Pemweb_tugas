@@ -3,9 +3,9 @@
 require __DIR__ . "/../../../config/db.php";
 
 $search = $_GET['search'] ?? '';
-$kelas  = $_GET['kelas'] ?? '';
+$mapel  = $_GET['mapel'] ?? '';
 
-$sql = "SELECT * FROM siswa WHERE 1=1";
+$sql = "SELECT * FROM guru WHERE 1=1";
 
 if (!empty($search)) {
     $sql .= " AND (
@@ -14,8 +14,8 @@ if (!empty($search)) {
     )";
 }
 
-if (!empty($kelas)) {
-    $sql .= " AND kelas = '$kelas'";
+if (!empty($mapel)) {
+    $sql .= " AND mapel = '$mapel'";
 }
 
-$get_siswa = mysqli_query($conn, $sql);
+$get_guru = mysqli_query($conn, $sql);

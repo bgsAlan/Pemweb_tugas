@@ -24,7 +24,7 @@ if (isset($_POST["submit"])) {
 
     if (mysqli_num_rows($check_nisn) > 0) {
         $_SESSION['error'] = "NISN sudah digunakan!";
-        header("Location: ../../view/admin/kelolaSiswa/tambahSiswa_view.php");
+        header("Location: ../../../view/admin/kelolaSiswa/tambahSiswa_view.php");
         exit;
     }
 
@@ -42,18 +42,18 @@ if (isset($_POST["submit"])) {
         if ($result_siswa) {
 
             $_SESSION['success'] = "Data siswa berhasil ditambahkan!";
-            header("Location: ../../view/admin/kelolaSiswa/tambahSiswa_view.php");
+            header("Location: ../../../view/admin/kelolaSiswa/tambahSiswa_view.php");
             exit;
         } else {
 
             $_SESSION['error'] = "Data siswa gagal ditambahkan!";
-            header("Location: ../../view/admin/kelolaSiswa/tambahSiswa_view.php");
+            header("Location: ../../../view/admin/kelolaSiswa/tambahSiswa_view.php");
             exit;
         }
     } else {
 
         $_SESSION['error'] = "Data siswa gagal ditambahkan!";
-        header("Location: ../../view/admin/kelolaSiswa/tambahSiswa_view.php");
+        header("Location: ../../../view/admin/kelolaSiswa/tambahSiswa_view.php");
         exit;
     }
 }
