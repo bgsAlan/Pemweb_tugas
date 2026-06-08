@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-require('../../controller/get_presensi_controller.php');
+require('../../../controller/admin/presensi/get_presensi_controller.php');
 
-include '../../layout/header.php';
-include '../../layout/sidebar.php';
+include '../../../layout/header.php';
+include '../../../layout/sidebar_admin.php';
 ?>
 
 <div class="main-content">
@@ -24,7 +24,7 @@ include '../../layout/sidebar.php';
                 </p>
             </div>
 
-            <a href="../../controller/presensi_end_controller.php"
+            <a href="/pemweb_tugas/controller/admin/presensi/presensi_end_controller.php"
                 class="btn btn-danger rounded-3 px-4">
 
                 <i class="bi bi-x-circle"></i>
@@ -70,7 +70,7 @@ include '../../layout/sidebar.php';
                         </h4>
 
 
-                        <form action="../../controller/presensi_controller.php"
+                        <form action="/pemweb_tugas/controller/admin/presensi/presensi_controller.php"
                             method="POST">
 
                             <div class="mb-3">
@@ -358,4 +358,4 @@ include '../../layout/sidebar.php';
 
 </div>
 
-<?php include '../../layout/footer.php'; ?>
+<?php include '../../../layout/footer.php'; ?>
