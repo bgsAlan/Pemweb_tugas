@@ -29,7 +29,7 @@ include '../../layout/sidebar_siswa.php';
 
                             <div class="card-header bg-primary text-white">
                                 <h5 class="mb-0">
-                                    <?= $presensi['judul']; ?>
+                                    <?= htmlspecialchars($presensi['judul']); ?>
                                 </h5>
                             </div>
 
@@ -52,7 +52,7 @@ include '../../layout/sidebar_siswa.php';
 
                                 <p>
                                     <strong>Keterangan :</strong><br>
-                                    <?= $presensi['keterangan']; ?>
+                                    <?= htmlspecialchars($presensi['keterangan']); ?>
                                 </p>
 
                             </div>
