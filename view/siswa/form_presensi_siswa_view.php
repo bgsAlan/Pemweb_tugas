@@ -1,16 +1,16 @@
 <?php
 
-require('../../controller/admin/presensi/get_presensi_guru_controller.php');
+require('../../controller/admin/presensi/get_presensi_siswa_controller.php');
 
 $presensi_id = $_GET['presensi_id'] ?? null;
 
 if (!$presensi_id) {
-    header("Location: presensi_guru_view.php");
+    header("Location: presensi_siswa_view.php");
     exit;
 }
 
 include '../../layout/header.php';
-include '../../layout/sidebar_guru.php';
+include '../../layout/sidebar_siswa.php';
 
 ?>
 
@@ -21,7 +21,7 @@ include '../../layout/sidebar_guru.php';
         <div class="mb-4">
 
             <h2 class="fw-bold">
-                Presensi Guru
+                Presensi Siswa
             </h2>
 
             <p class="text-muted">
@@ -61,10 +61,9 @@ include '../../layout/sidebar_guru.php';
 
                         <form action="../../controller/admin/presensi/save_form_presensi_controller.php" method="POST">
 
-                            <input
-                                type="hidden"
-                                name="presensi_id"
-                                value="<?= $presensi_id ?>">
+                            <input type="hidden"
+                                   name="presensi_id"
+                                   value="<?= $presensi_id ?>">
 
                             <div class="mb-4">
 
@@ -73,7 +72,7 @@ include '../../layout/sidebar_guru.php';
                                 </label>
 
                                 <select
-                                    name="status_kehadiran"
+                                    name="form-presensi"
                                     class="form-select rounded-3 p-3">
 
                                     <option value="hadir">Hadir</option>
