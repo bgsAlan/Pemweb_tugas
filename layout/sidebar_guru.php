@@ -18,7 +18,7 @@
         <i class="bi bi-clipboard-data"></i> Lihat Nilai Siswa
     </a>
 
-    <a href="../../controller/controll_logout.php">
+    <a href="../../controller/logout_controller.php">
         <i class="bi bi-box-arrow-right"></i> Logout
     </a>
 </div>
@@ -55,7 +55,7 @@
             <i class="bi bi-clipboard-data"></i> Lihat Nilai Siswa
         </a>
 
-        <a href="../../controller/controll_logout.php" class="d-block text-white text-decoration-none">
+        <a href="../../controller/logout_controller.php" class="d-block text-white text-decoration-none">
             <i class="bi bi-box-arrow-right"></i> Logout
         </a>
 
