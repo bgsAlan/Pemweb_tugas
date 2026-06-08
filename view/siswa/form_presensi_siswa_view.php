@@ -1,16 +1,16 @@
 <?php
 
-require('../../controller/admin/presensi/get_presensi_siswa_controller.php');
+require('../../controller/admin/presensi/get_presensi_guru_controller.php');
 
 $presensi_id = $_GET['presensi_id'] ?? null;
 
 if (!$presensi_id) {
-    header("Location: presensi_siswa_view.php");
+    header("Location: presensi_guru_view.php");
     exit;
 }
 
 include '../../layout/header.php';
-include '../../layout/sidebar_siswa.php';
+include '../../layout/sidebar_guru.php';
 
 ?>
 
@@ -21,7 +21,7 @@ include '../../layout/sidebar_siswa.php';
         <div class="mb-4">
 
             <h2 class="fw-bold">
-                Presensi Siswa
+                Presensi Guru
             </h2>
 
             <p class="text-muted">
