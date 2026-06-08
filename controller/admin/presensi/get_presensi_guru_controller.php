@@ -4,6 +4,10 @@ session_start();
 
 require(__DIR__ . '/../../../config/db.php');
 
+if (!isset($_SESSION['user_id'])) {
+    die("User belum login");
+}
+
 $user_id = $_SESSION['user_id'];
 
 $sql = "
@@ -15,4 +19,5 @@ $sql = "
 ";
 
 $result = mysqli_query($conn, $sql);
+
 ?>
