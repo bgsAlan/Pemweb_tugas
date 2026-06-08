@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "
         <script>
             alert('Presensi berhasil dibuat');
-            window.location='../../view/guru/dashboard_guru_view.php';
+            window.location='../../view/admin/dashboard_admin_view.php';
         </script>
         ";
 
