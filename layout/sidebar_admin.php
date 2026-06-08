@@ -14,7 +14,7 @@
         Kelola Users
     </a>
 
-    <a href="open_presensi_view.php">
+    <a href="/pemweb_tugas/view/admin/presensi/open_presensi_view.php">
         <i class="bi bi-calendar-check"></i>
         Presensi
     </a>
