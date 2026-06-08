@@ -1,82 +1,115 @@
 <?php
-include("../../layout/header.php");
-include("../../layout/sidebar_guru.php");
+
+require('../../controller/admin/presensi/get_presensi_guru_controller.php');
+
+$presensi_id = $_GET['presensi_id'] ?? null;
+
+if (!$presensi_id) {
+    header("Location: presensi_guru_view.php");
+    exit;
+}
+
+include '../../layout/header.php';
+include '../../layout/sidebar_guru.php';
+
 ?>
 
 <div class="main-content">
+
     <div class="container-fluid">
 
-        <div class="row mb-4">
-            <div class="col-md-12">
-                <div class="card shadow border-0">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">Buka Presensi Baru</h5>
-                    </div>
+        <div class="mb-4">
 
-                    <div class="card-body">
+            <h2 class="fw-bold">
+                Presensi Guru
+            </h2>
 
-                        <form action="../../controller/guru/simpan_presensi_controller.php" method="POST">
+            <p class="text-muted">
+                Silahkan isi presensi kehadiran hari ini
+            </p>
 
-                            <div class="mb-3">
-                                <label class="form-label">Judul Presensi</label>
-                                <input type="text"
-                                       name="judul"
-                                       class="form-control"
-                                       placeholder="Contoh : Presensi Pagi"
-                                       required>
-                            </div>
+        </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Target Presensi</label>
-                                <select name="target"
-                                        class="form-select"
-                                        required>
-                                    <option value="">Pilih Target</option>
-                                    <option value="murid">Murid</option>
-                                    <option value="guru">Guru</option>
-                                    <option value="semua">Semua</option>
+        <div class="row justify-content-center">
+
+            <div class="col-lg-6">
+
+                <div class="card border-0 shadow-sm rounded-4">
+
+                    <div class="card-body p-5">
+
+                        <div
+                            class="d-flex align-items-center justify-content-center mb-4"
+                            style="
+                                width:80px;
+                                height:80px;
+                                border-radius:20px;
+                                background: rgba(59,130,246,0.15);
+                                font-size:38px;
+                                margin:auto;
+                            ">
+                            📅
+                        </div>
+
+                        <h3 class="fw-bold text-center mb-2">
+                            Form Presensi
+                        </h3>
+
+                        <p class="text-muted text-center mb-5">
+                            Pilih status kehadiran anda
+                        </p>
+
+                        <form action="../../controller/admin/presensi/save_form_presensi_controller.php" method="POST">
+
+                            <input
+                                type="hidden"
+                                name="presensi_id"
+                                value="<?= $presensi_id ?>">
+
+                            <div class="mb-4">
+
+                                <label class="form-label fw-semibold">
+                                    Status Kehadiran
+                                </label>
+
+                                <select
+                                    name="status_kehadiran"
+                                    class="form-select rounded-3 p-3">
+
+                                    <option value="hadir">Hadir</option>
+                                    <option value="sakit">Sakit</option>
+                                    <option value="izin">Izin</option>
+                                    <option value="alpha">Alpha</option>
+
                                 </select>
+
                             </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Tanggal</label>
-                                <input type="date"
-                                       name="tanggal"
-                                       class="form-control"
-                                       required>
-                            </div>
+                            <div class="d-grid">
 
-                            <div class="mb-3">
-                                <label class="form-label">Jam Dibuka</label>
-                                <input type="time"
-                                       name="jam_dibuka"
-                                       class="form-control"
-                                       required>
-                            </div>
+                                <button
+                                    type="submit"
+                                    name="submit"
+                                    class="btn btn-primary rounded-3 py-3 fw-semibold">
 
-                            <div class="mb-3">
-                                <label class="form-label">Keterangan</label>
-                                <textarea name="keterangan"
-                                          rows="4"
-                                          class="form-control"
-                                          placeholder="Masukkan keterangan presensi"></textarea>
-                            </div>
+                                    Presensi
 
-                            <button type="submit"
-                                    class="btn btn-primary">
-                                Buka Presensi
-                            </button>
+                                </button>
+
+                            </div>
 
                         </form>
 
                     </div>
+
                 </div>
+
             </div>
+
         </div>
 
     </div>
+
 </div>
 
-<?php
-include("../../layout/footer.php");
-?>
+<?php include '../../layout/footer.php'; ?>
