@@ -24,7 +24,7 @@
         Rekap Absensi
     </a>
 
-    <a href="../../controller/controll_logout.php">
+    <a href="../../controller/logout_controller.php">
         <i class="bi bi-box-arrow-right"></i>
         Logout
     </a>
