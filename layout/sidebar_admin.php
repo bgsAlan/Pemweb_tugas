@@ -4,12 +4,12 @@
         PresensiApp
     </h4>
 
-    <a href="/siakad_pemweb/view/admin/dashboard_admin_view.php">
+    <a href="/pemweb_tugas/view/admin/dashboard_admin_view.php">
         <i class="bi bi-speedometer2"></i>
         Dashboard
     </a>
 
-    <a href="/siakad_pemweb/view/admin/kelolaUsers_view.php">
+    <a href="/pemweb_tugas/view/admin/kelolaUsers_view.php">
         <i class="bi bi-people"></i>
         Kelola Users
     </a>
@@ -24,7 +24,7 @@
         Rekap Absensi
     </a>
 
-    <a href="../../controller/logout_controller.php">
+    <a href="/pemweb_tugas/controller/logout_controller.php">
         <i class="bi bi-box-arrow-right"></i>
         Logout
     </a>
