@@ -1,17 +1,14 @@
 <?php
-
-require('../../controller/admin/presensi/get_presensi_guru_controller.php');
-
+require('../../controller/admin/presensi/get_presensi_siswa_controller.php');
 include '../../layout/header.php';
-include '../../layout/sidebar_guru.php';
-
+include '../../layout/sidebar_siswa.php';
 ?>
 
 <div class="main-content">
     <div class="container-fluid">
 
         <div class="mb-4">
-            <h2 class="fw-bold">Presensi Guru</h2>
+            <h2 class="fw-bold">Presensi Siswa</h2>
             <p class="text-muted">Daftar presensi aktif</p>
         </div>
 
@@ -22,7 +19,6 @@ include '../../layout/sidebar_guru.php';
                 <?php while ($presensi = mysqli_fetch_assoc($result)) : ?>
 
                     <?php
-
                     $cek = mysqli_query(
                         $conn,
                         "SELECT status_kehadiran
@@ -35,27 +31,18 @@ include '../../layout/sidebar_guru.php';
                     $status = $detail['status_kehadiran'] ?? null;
 
                     if ($status === 'hadir') {
-
-                        $card_style = 'border: 2px solid #198754; background: rgba(25,135,84,0.08);';
+                        $card_style = 'border:2px solid #198754; background:rgba(25,135,84,0.08);';
                         $badge = '<span class="badge bg-success">Hadir</span>';
-
                     } elseif ($status === 'sakit' || $status === 'izin') {
-
-                        $card_style = 'border: 2px solid #ffc107; background: rgba(255,193,7,0.10);';
+                        $card_style = 'border:2px solid #ffc107; background:rgba(255,193,7,0.10);';
                         $badge = '<span class="badge bg-warning text-dark">' . ucfirst($status) . '</span>';
-
                     } elseif ($status === 'alpha') {
-
-                        $card_style = 'border: 2px solid #dc3545; background: rgba(220,53,69,0.08);';
+                        $card_style = 'border:2px solid #dc3545; background:rgba(220,53,69,0.08);';
                         $badge = '<span class="badge bg-danger">Alpha</span>';
-
                     } else {
-
                         $card_style = '';
                         $badge = '<span class="badge bg-secondary">Belum Presensi</span>';
-
                     }
-
                     ?>
 
                     <div class="col-lg-4">
@@ -65,13 +52,8 @@ include '../../layout/sidebar_guru.php';
                             <div class="card-body p-4">
 
                                 <div class="d-flex justify-content-between align-items-start mb-3">
-
-                                    <h4 class="fw-bold mb-0">
-                                        <?= htmlspecialchars($presensi['judul']) ?>
-                                    </h4>
-
+                                    <h4 class="fw-bold mb-0"><?= htmlspecialchars($presensi['judul']) ?></h4>
                                     <?= $badge ?>
-
                                 </div>
 
                                 <p class="text-muted mb-2">
@@ -84,7 +66,7 @@ include '../../layout/sidebar_guru.php';
 
                                 <?php if (!$status) : ?>
 
-                                    <a href="form_presensi_guru_view.php?presensi_id=<?= $presensi['id'] ?>"
+                                    <a href="form_presensi_siswa_view.php?presensi_id=<?= $presensi['id'] ?>"
                                        class="btn btn-primary rounded-3">
                                         Presensi
                                     </a>
@@ -108,11 +90,9 @@ include '../../layout/sidebar_guru.php';
             <?php else : ?>
 
                 <div class="col-12">
-
                     <div class="alert alert-secondary">
                         Tidak ada presensi aktif
                     </div>
-
                 </div>
 
             <?php endif; ?>

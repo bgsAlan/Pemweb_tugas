@@ -1,3 +1,4 @@
+revisi yang benar
 <!-- Sidebar Desktop -->
 <div class="sidebar d-none d-lg-block p-3">
     <h4 class="text-white mb-4">PanelSiswa</h4>
@@ -6,7 +7,7 @@
         <i class="bi bi-speedometer2"></i> Dashboard
     </a>
 
-    <a href="presensi_view.php">
+    <a href="/pemweb_tugas/view/siswa/presensi_siswa_view.php">
         <i class="bi bi-calendar-check"></i> Presensi
     </a>
 
