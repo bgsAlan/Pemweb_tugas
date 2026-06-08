@@ -1,6 +1,6 @@
 <?php
 
-require('../../controller/admin/presensi/get_presensi_guru_controller.php');
+require(__DIR__ . '../../../controller/admin/presensi/get_presensi_guru_controller.php');
 
 include '../../layout/header.php';
 include '../../layout/sidebar_guru.php';
