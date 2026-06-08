@@ -10,7 +10,7 @@
         <i class="bi bi-calendar-check"></i> Presensi
     </a>
 
-    <a href="input_nilai_view.php">
+    <a href="pilih_siswa_view.php">
         <i class="bi bi-clipboard-data"></i> Tambah Nilai Siswa
     </a>
 
@@ -47,7 +47,7 @@
             <i class="bi bi-calendar-check"></i> Presensi
         </a>
 
-        <a href="input_nilai_view.php" class="d-block text-white mb-3 text-decoration-none">
+        <a href="pilih_siswa_view.php" class="d-block text-white mb-3 text-decoration-none">
             <i class="bi bi-clipboard-data"></i> Tambah Nilai Siswa
         </a>
 

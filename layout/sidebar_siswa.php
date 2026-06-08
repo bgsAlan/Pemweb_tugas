@@ -2,7 +2,7 @@
 <div class="sidebar d-none d-lg-block p-3">
     <h4 class="text-white mb-4">PanelSiswa</h4>
 
-    <a href="dashboard_guru_view.php">
+    <a href="dashboard_siswa_view.php">
         <i class="bi bi-speedometer2"></i> Dashboard
     </a>
 
