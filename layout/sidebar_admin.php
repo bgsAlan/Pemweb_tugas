@@ -19,7 +19,7 @@
         Presensi
     </a>
 
-    <a href="rekap_absensi_view.php">
+    <a href="/pemweb_tugas/view/admin/presensi/rekap_presensi_view.php">
         <i class="bi bi-clipboard-data"></i>
         Rekap Absensi
     </a>
