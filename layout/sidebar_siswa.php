@@ -3,7 +3,7 @@ revisi yang benar
 <div class="sidebar d-none d-lg-block p-3">
     <h4 class="text-white mb-4">PanelSiswa</h4>
 
-    <a href="dashboard_siswa_view.php">
+    <a href="/pemweb_tugas/view/siswa/dashboard_siswa_view.php">
         <i class="bi bi-speedometer2"></i> Dashboard
     </a>
 
@@ -37,7 +37,7 @@ revisi yang benar
 
     <div class="offcanvas-body">
 
-        <a href="dashboard_siswa_view.php" class="d-block text-white mb-3 text-decoration-none">
+        <a href="/pemweb_tugas/view/siswa/dashboard_siswa_view.php" class="d-block text-white mb-3 text-decoration-none">
             <i class="bi bi-speedometer2"></i> Dashboard
         </a>
 

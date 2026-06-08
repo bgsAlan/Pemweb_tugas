@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 // Guard: kalau tidak ada ?id redirect ke halaman pilih siswa
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     header("Location: pilih_siswa_view.php");
@@ -19,7 +18,7 @@ require __DIR__ . '/../../controller/admin/kelolaGuru/input_nilai_guru_controlle
         <div class="card shadow mx-auto" style="max-width: 700px;">
 
             <div class="card-header bg-primary text-white">
-                <h4 class="mb-0">Input Nilai Siswa</h4>
+                <h4 class="mb-0">Input Nilai Siswa 📝</h4>
             </div>
 
             <div class="card-body">
@@ -40,13 +39,13 @@ require __DIR__ . '/../../controller/admin/kelolaGuru/input_nilai_guru_controlle
 
                 <form action="../../controller/admin/kelolaGuru/insert_nilai_guru_controller.php" method="POST">
 
-                    <input type="hidden" name="siswa_id" value="<?= $siswa['id'] ?>">
+                    <input type="hidden" name="siswa_id" value="<?= htmlspecialchars($siswa['id']) ?>">
 
                     <div class="mb-3">
                         <label class="form-label">Nama Siswa</label>
                         <input type="text"
                             class="form-control"
-                            value="<?= $siswa['nama'] ?>"
+                            value="<?= htmlspecialchars($siswa['nama']) ?>"
                             readonly>
                     </div>
 
@@ -54,7 +53,7 @@ require __DIR__ . '/../../controller/admin/kelolaGuru/input_nilai_guru_controlle
                         <label class="form-label">NISN</label>
                         <input type="text"
                             class="form-control"
-                            value="<?= $siswa['nisn'] ?>"
+                            value="<?= htmlspecialchars($siswa['nisn']) ?>"
                             readonly>
                     </div>
 
@@ -63,13 +62,23 @@ require __DIR__ . '/../../controller/admin/kelolaGuru/input_nilai_guru_controlle
                         <select name="mapel_id" class="form-select" required>
                             <option value="">-- Pilih Mata Pelajaran --</option>
                             <?php while ($mapel = mysqli_fetch_assoc($get_mapel)): ?>
-                                <option value="<?= $mapel['id'] ?>">
-                                    <?= $mapel['nama'] ?>
+                                <option value="<?= htmlspecialchars($mapel['id']) ?>">
+                                    <?= htmlspecialchars($mapel['nama']) ?>
                                 </option>
                             <?php endwhile; ?>
                         </select>
                     </div>
 
+                    <div class="mb-3">
+                        <label class="form-label">Jenis Nilai</label>
+                        <select name="jenis_nilai" class="form-select" required>
+                            <option value="">-- Pilih Jenis Nilai --</option>
+                            <option value="tugas">Tugas</option>
+                            <option value="harian">Harian</option>
+                            <option value="uts">UTS</option>
+                            <option value="uas">UAS</option>
+                        </select>
+                    </div>
                     <div class="mb-3">
                         <label class="form-label">Nilai</label>
                         <input type="number"
@@ -77,6 +86,7 @@ require __DIR__ . '/../../controller/admin/kelolaGuru/input_nilai_guru_controlle
                             min="0"
                             max="100"
                             class="form-control"
+                            placeholder="Contoh: 85"
                             required>
                     </div>
 
