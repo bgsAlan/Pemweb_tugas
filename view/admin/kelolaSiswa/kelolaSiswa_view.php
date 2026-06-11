@@ -103,7 +103,7 @@ include("../../../layout/sidebar_admin.php");
                                     <td><?= $no++ ?></td>
                                     <td><?= $siswa['nisn'] ?></td>
                                     <td><?= $siswa['nama'] ?></td>
-                                    <td><?= $siswa['Kelas'] ?></td>
+                                    <td><?= $siswa['kelas'] ?></td>
                                     <td>
                                         <a href="edit_siswa_view.php"
                                             class="btn btn-warning btn-sm">
