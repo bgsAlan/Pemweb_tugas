@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("../../../config/db.php");
+require(__DIR__."/../../../config/db.php");
 //Membuka presensi
 if (isset($_POST["submit"])) {
     $title = $_POST["title"];
@@ -24,7 +24,7 @@ if (isset($_POST["submit"])) {
             OR target='semua'
         )"
         );
-    } else if ($target == 'murid') {
+    } else if ($target == 'siswa') {
 
         $check = mysqli_query(
             $conn,
@@ -34,7 +34,7 @@ if (isset($_POST["submit"])) {
         WHERE status='aktif'
 
         AND (
-            target='murid'
+            target='siswa'
             OR target='semua'
         )"
         );

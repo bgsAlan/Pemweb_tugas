@@ -1,11 +1,11 @@
 <?php
 session_start();
 require __DIR__ . "/../../../config/db.php";
+
 if (isset($_GET['id'])) {
 
-    $siswa_id = $_GET['id'];
+    $siswa_id = mysqli_real_escape_string($conn, $_GET['id']);
 
-    // Ambil data siswa
     $query = mysqli_query($conn, "
         SELECT user_id
         FROM siswa
@@ -15,16 +15,20 @@ if (isset($_GET['id'])) {
     $siswa = mysqli_fetch_assoc($query);
 
     if ($siswa) {
-
         $user_id = $siswa['user_id'];
 
-        // Hapus siswa
+
+        mysqli_query($conn, "
+            DELETE FROM nilai
+            WHERE siswa_id = '$siswa_id'
+        ");
+
         mysqli_query($conn, "
             DELETE FROM siswa
             WHERE id = '$siswa_id'
         ");
 
-        // Hapus user login
+
         mysqli_query($conn, "
             DELETE FROM users
             WHERE id = '$user_id'
@@ -32,10 +36,9 @@ if (isset($_GET['id'])) {
 
         $_SESSION['success'] = "Data siswa berhasil dihapus";
     } else {
-
         $_SESSION['error'] = "Data siswa tidak ditemukan";
     }
 
-    header("Location: ../../../view/admin/kelolaSiswa/tambahSiswa_view.php");
+    header("Location: ../../../view/admin/kelolaSiswa/kelolaSiswa_view.php");
     exit;
 }

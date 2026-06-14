@@ -72,7 +72,7 @@ include '../../layout/sidebar_siswa.php';
                                 </label>
 
                                 <select
-                                    name="form-presensi"
+                                    name="status_kehadiran"
                                     class="form-select rounded-3 p-3">
 
                                     <option value="hadir">Hadir</option>
