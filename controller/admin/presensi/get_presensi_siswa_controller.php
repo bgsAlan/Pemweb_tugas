@@ -12,10 +12,14 @@ $user_id = $_SESSION['user_id'];
 
 // Query di-update: Hapus filter status biar riwayat tetep muncul
 $sql = "
-    SELECT *
-    FROM presensi
-    WHERE target = 'siswa' OR target = 'semua'
-    ORDER BY id DESC
+SELECT *
+FROM presensi
+WHERE status = 'aktif'
+AND (
+    target = 'siswa'
+    OR target = 'semua'
+)
+ORDER BY id DESC
 ";
 
 $result = mysqli_query($conn, $sql);

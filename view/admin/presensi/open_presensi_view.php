@@ -20,8 +20,9 @@ include '../../../layout/sidebar_admin.php';
                 </h2>
 
                 <p class="text-muted mb-0">
-                    Admin dapat membuka sesi presensi untuk guru dan murid
+                Admin dapat membuka sesi presensi untuk guru dan siswa.
                 </p>
+
             </div>
 
             <a href="/pemweb_tugas/controller/admin/presensi/presensi_end_controller.php"
@@ -131,14 +132,14 @@ include '../../../layout/sidebar_admin.php';
                                     <div class="form-check">
 
                                         <input
-                                            class="form-check-input"
-                                            type="radio"
-                                            name="target"
-                                            value="murid">
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="target"
+                                        value="siswa">
 
-                                        <label class="form-check-label">
-                                            Murid
-                                        </label>
+                                    <label class="form-check-label">
+                                        Siswa
+                                    </label>
 
                                     </div>
 
