@@ -82,7 +82,7 @@ include '../../layout/sidebar_siswa.php';
 
                                     <a href="form_presensi_siswa_view.php?presensi_id=<?= $presensi['id'] ?>"
                                         class="btn btn-primary rounded-3">
-                                        Presensi
+                                    Presensi
                                     </a>
 
                                 <?php else : ?>
