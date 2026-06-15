@@ -63,4 +63,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $conn->close();
 }
 include ('../view/auth/login_view.php');
-?>
